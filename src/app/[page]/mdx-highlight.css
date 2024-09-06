@@ -1,0 +1,119 @@
+pre {
+    @apply w-full sm:w-fit h-fit p-10 bg-primary/5 rounded-xl box-border;
+
+    & code {
+        @apply whitespace-pre-wrap break-all;
+    }
+}
+
+code.hljs.language-html {
+    & .hljs-tag {
+        @apply text-primary/90;
+
+        & .hljs-name {
+            @apply text-blue-700;
+        }
+
+        & .hljs-attr {
+            @apply text-blue-500;
+        }
+
+        & .hljs-string {
+            @apply text-green-700;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        & .hljs-tag {
+            @apply text-primary/30;
+    
+            & .hljs-name {
+                @apply text-blue-500;
+            }
+    
+            & .hljs-attr {
+                @apply text-blue-300;
+            }
+    
+            & .hljs-string {
+                @apply text-green-500;
+            }
+        }
+    }
+
+    & .javascript {
+        & .hljs-keyword {
+            @apply text-blue-600;
+        }
+
+        & .hljs-title.function_ {
+            @apply text-yellow-600;
+        }
+
+        & .hljs-string {
+            @apply text-green-600;
+        }
+
+        & .hljs-variable.language_ {
+            @apply text-blue-500;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        & .javascript {
+            & .hljs-keyword {
+                @apply text-blue-500;
+            }
+    
+            & .hljs-title.function_ {
+                @apply text-yellow-200;
+            }
+    
+            & .hljs-string {
+                @apply text-green-500;
+            }
+    
+            & .hljs-variable.language_ {
+                @apply text-blue-300;
+            }
+        }
+    }
+
+    & .css {
+        & .hljs-selector-tag {
+            @apply text-yellow-600;
+        }
+    
+        & .hljs-string {
+            @apply text-green-600;
+        }
+    
+        & .hljs-attribute {
+            @apply text-blue-600;
+        }
+        
+        & .hljs-number {
+            @apply text-orange-600;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        & .css {
+            & .hljs-selector-tag {
+                @apply text-yellow-200;
+            }
+        
+            & .hljs-string {
+                @apply text-green-500;
+            }
+        
+            & .hljs-attribute {
+                @apply text-blue-500;
+            }
+            
+            & .hljs-number {
+                @apply text-orange-400;
+            }
+        }
+    }
+}

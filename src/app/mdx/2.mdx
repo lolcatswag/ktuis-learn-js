@@ -1,0 +1,65 @@
+import { Button } from "./react/button-showcase.tsx"
+
+В нашем первом модуле, прежде чем перейти к практике написания кода на языке JavaScript, 
+сначала мы дадим ответы на некоторые фундаментальные вопросы, а именно: "Что же такое JavaScript?", "Что он из себя представляет?" и "Что он может делать?". 
+После этого мы внимательно рассмотрим некоторые из ключевых элементов, такие как переменные, строки, числа и массивы.
+
+## Предисловие
+Вам не нужно иметь никаких предварительных знаний JavaScript чтобы приступить к этому модулю, но у вас должно быть некоторое представление о HTML и CSS.
+
+JavaScript это язык, который позволяет вам применять сложные вещи на web странице — каждый раз, когда на web странице происходит что-то большее, 
+чем просто её статичное отображение — отображение периодически обновляемого контента, или интерактивных карт, или анимация 2D/3D графики, 
+или прокрутка видео в проигрывателе, и т.д. — можете быть уверены, что скорее всего, не обошлось без JavaScript. 
+Это третий слой слоёного пирога стандартных web технологий.
+
+Три слоя прекрасно выстраиваются друг над другом. Для примера возьмём кнопку. Чтобы задать структуру, создадим разметку с помощью HTML:
+```html
+<button type="button" onclick="sayMeow()">Мяукнуть</button>
+```
+
+Затем добавим немного CSS, чтобы кнопка выглядела симпатичнее:
+```html
+<style>
+    button {
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+
+        @media (prefers-color-scheme: dark) {
+            --primary: 0 0% 98%;
+            --primary-foreground: 240 5.9% 10%;
+        }
+
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        background-color: hsl(var(--primary));
+        border-radius: 9999px;
+        color: hsl(var(--primary-foreground));
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        font-weight: 600;
+
+        &:hover {
+            background-color: hsl(var(--primary) / 0.8);
+        }
+    }
+</style>
+```
+
+И наконец добавим немного JavaScript для реализации динамического поведения:
+```html
+<script>
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", sayMeow);
+
+    function sayMeow() {
+        const meow = "Мяу!"
+        alert(meow)
+    }
+</script>
+```
+
+В итоге у вас должна получиться примерно такая кнопка: <Button />
